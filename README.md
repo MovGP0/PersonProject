@@ -1,4 +1,0 @@
-PersonProject
-=============
-
-MVC Demo
