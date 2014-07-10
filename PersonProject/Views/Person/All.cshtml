@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PersonProject.Model.Person>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body role="document" class="container">
+    <p>
+        <a href="/Person">Create new Person</a>
+    </p>
+
+    <div>
+        <div class="row">
+            <div class="col-sm-4 col-xs-6">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                @Html.DisplayNameFor(model => model.LastName)
+            </div>
+        </div>
+    
+    @foreach (var person in Model)
+    {
+        <div class="row">
+            <div class="col-sm-4 col-xs-6">
+                @Html.DisplayFor(modelItem => person.FirstName)
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                @Html.DisplayFor(modelItem => person.LastName)
+            </div>
+            <div class="col-sm-1 col-xs-1">
+                <a href="/Person/@person.Id">Details</a>
+            </div>
+            <div class="col-sm-1 col-xs-1">
+                <a href="/Person/Edit/@person.Id">Edit</a>
+            </div>
+            <div class="col-sm-1 col-xs-1">
+                <a href="/Person/Delete/@person.Id">Delete</a>
+            </div>
+        </div>
+    } 
+    </div>
+</body>
+</html>
