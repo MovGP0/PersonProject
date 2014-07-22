@@ -19,10 +19,14 @@ namespace PersonProject
             routes.MapRoute("Show Person", "Person/{id}", new { controller = "Person", action = "Details" });
 
             // GET http://localhost/Person/25
-            routes.MapRoute("Delete Person", "Person/Delete/{id}", new { controller = "Person", action = "DeleteAsync" });
+            routes.MapRoute("Delete Person", "Person/Delete/{id}", new { controller = "Person", action = "Delete" });
 
             // GET, POST http://localhost/Person/Edit
             routes.MapRoute("Update Person", "Person/Edit/{id}", new { controller = "Person", action = "Edit" });
+
+            routes.MapRoute("Show Person/All",     "Person/All",     new { controller = "Person", action = "All" });
+            routes.MapRoute("Show Person/Create",  "Person/Create",  new { controller = "Person", action = "Create" });
+            routes.MapRoute("Show Person/Details", "Person/Details", new { controller = "Person", action = "All" });
 
             // DEFAULT
             // GET http://localhost/

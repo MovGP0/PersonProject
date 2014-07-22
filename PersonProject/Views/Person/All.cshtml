@@ -13,41 +13,41 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
-<body role="document" class="container">
+<body>
     <p>
         <a href="/Person">Create new Person</a>
     </p>
-
-    <div>
-        <div class="row">
-            <div class="col-sm-4 col-xs-6">
+    <table class="table">
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.FirstName)
-            </div>
-            <div class="col-sm-4 col-xs-6">
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.LastName)
-            </div>
-        </div>
+            </th>
+            <th colspan="3">&nbsp;</th>
+        </tr>
     
     @foreach (var person in Model)
     {
-        <div class="row">
-            <div class="col-sm-4 col-xs-6">
+        <tr>
+            <td>
                 @Html.DisplayFor(modelItem => person.FirstName)
-            </div>
-            <div class="col-sm-4 col-xs-6">
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => person.LastName)
-            </div>
-            <div class="col-sm-1 col-xs-1">
+            </td>
+            <td>
                 <a href="/Person/@person.Id">Details</a>
-            </div>
-            <div class="col-sm-1 col-xs-1">
+            </td>
+            <td>
                 <a href="/Person/Edit/@person.Id">Edit</a>
-            </div>
-            <div class="col-sm-1 col-xs-1">
+            </td>
+            <td>
                 <a href="/Person/Delete/@person.Id">Delete</a>
-            </div>
-        </div>
+            </td>
+        </tr>
     } 
-    </div>
+    </table>
 </body>
 </html>

@@ -1,25 +1,25 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace PersonProject.Model
 {
-    [Table("People")]
     public class Person
     {
         public Person()
         {
+            Id = -1;
+            FirstName = string.Empty;
+            LastName = string.Empty;
         }
 
-        public Person(int id, string firstName, string lastName)
+        public Person(long id, string firstName, string lastName)
         {
+            Id = id;
             FirstName = firstName;
             LastName = lastName;
-            Id = id;
         }
 
-        [Key]
-        public int Id { get; set; }
+        [Range(0, long.MaxValue)]
+        public long Id { get; set; }
 
         [Required]
         [MinLength(2)]

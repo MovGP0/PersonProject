@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
-<body role="document" class="container">
+<body>
     <div>
         <h4>Person</h4>
         <hr />
@@ -23,23 +23,26 @@
             <dt>
                 @Html.DisplayNameFor(model => model.FirstName)
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.FirstName)
             </dd>
-
+    
             <dt>
                 @Html.DisplayNameFor(model => model.LastName)
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.LastName)
             </dd>
-
         </dl>
     </div>
     <p>
-        <a href="/Person/Edit/@person.Id">Edit</a>
+        @{ if ( person.Id >= 0)
+           { 
+               <a href="/Person/Edit/@person.Id">Edit</a>
+           }
+        }
         <a href="/People">Cancel</a>
     </p>
 </body>
