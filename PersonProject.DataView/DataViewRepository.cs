@@ -1,47 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using PersonProject.Database;
+using AutoMapper;
+using PersonProject.DataView.PersonService;
 using Person = PersonProject.Model.Person;
 
 namespace PersonProject.DataView
 {
     public class DataViewRepository : IDisposable
     {
-        private readonly PeopleEntities _context;
-
         public DataViewRepository()
         {
-            _context = new PeopleEntities();
+            Service = new personServiceClient();
+            Service.Open();
         }
 
-        public DataViewRepository(PeopleEntities context)
+        private personServiceClient Service { get; set; }
+
+        private bool _isDesposed;
+        public void Dispose()
         {
-            _context = context;
+            if (_isDesposed || Service == null) return;
+
+            Service.Close();
+            _isDesposed = true;
         }
 
         public IEnumerable<Person> GetAll()
         {
-            var peoples = _context.People.ToList();
-            return peoples.Select(p => new Person(p.Id, p.FirstName, p.LastName));
+            return Mapper.Map<IEnumerable<Person>>(Service.getAll());
         }
 
         public Person GetById(long id)
         {
-            return _context.GetPersonById(id)
-                .Select(p => new Person(id, p.FirstName, p.LastName))
-                .DefaultIfEmpty(new Person())
-                .SingleOrDefault();
-        }
-
-        public void Dispose()
-        {
-            if (_context == null)
-            {
-                return;
-            }
-
-            _context.Dispose();
+            return Mapper.Map<Person>(Service.getById(id));
         }
     }
 }

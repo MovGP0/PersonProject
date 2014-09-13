@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonProject", "PersonProject\PersonProject.csproj", "{FD819FC6-4682-41C2-8407-A99D6DE60B2B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA} = {5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonProject.Tests", "PersonProject.Tests\PersonProject.Tests.csproj", "{DF700056-4B8F-41C6-9CCE-33A6837D89E7}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -17,6 +20,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonProject.Cqrs", "PersonProject.Cqrs\PersonProject.Cqrs.csproj", "{F9879A74-324D-4927-B437-58432D7F1E05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonProject.DataView", "PersonProject.DataView\PersonProject.DataView.csproj", "{9ECC20BF-4E18-4238-A938-40EE377C46F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA} = {5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PersonProject.Database.Sql", "PersonProject.Database.Sql\PersonProject.Database.Sql.sqlproj", "{B7C2194D-6BB0-4D87-9920-0010DCD9266D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonProject.Database.Service", "PersonProject.Database.Service\PersonProject.Database.Service.csproj", "{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonProject.Database.Service.Model", "PersonProject.Database.Service.Model\PersonProject.Database.Service.Model.csproj", "{FB1B5A03-CB60-4A0B-B19E-5FA2B96820C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +60,20 @@ Global
 		{9ECC20BF-4E18-4238-A938-40EE377C46F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ECC20BF-4E18-4238-A938-40EE377C46F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ECC20BF-4E18-4238-A938-40EE377C46F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C2194D-6BB0-4D87-9920-0010DCD9266D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C2194D-6BB0-4D87-9920-0010DCD9266D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C2194D-6BB0-4D87-9920-0010DCD9266D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B7C2194D-6BB0-4D87-9920-0010DCD9266D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C2194D-6BB0-4D87-9920-0010DCD9266D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C2194D-6BB0-4D87-9920-0010DCD9266D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E93BDF7-8777-4249-BFC4-DE81CF37C5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1B5A03-CB60-4A0B-B19E-5FA2B96820C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1B5A03-CB60-4A0B-B19E-5FA2B96820C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1B5A03-CB60-4A0B-B19E-5FA2B96820C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1B5A03-CB60-4A0B-B19E-5FA2B96820C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

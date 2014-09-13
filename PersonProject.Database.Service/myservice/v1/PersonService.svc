@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" 
+    Service="PersonProject.Database.Service.Myservice.V1.PersonService" 
+    CodeBehind="PersonService.svc.cs" %>

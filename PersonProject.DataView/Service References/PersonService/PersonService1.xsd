@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/myservice/v1.0/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/myservice/v1.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllResult" nillable="true" type="tns:ArrayOfperson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfperson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="person" nillable="true" type="tns:person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfperson" nillable="true" type="tns:ArrayOfperson" />
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element name="firstName" nillable="true" type="xs:string" />
+      <xs:element name="lastName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="person" nillable="true" type="tns:person" />
+  <xs:element name="getById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getByIdResult" nillable="true" type="tns:person" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
